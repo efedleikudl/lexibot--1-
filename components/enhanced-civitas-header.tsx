@@ -27,15 +27,14 @@ export default function EnhancedCivitasHeader({ onUploadClick }: EnhancedCivitas
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const navigationItems = [
-    { href: "/", label: "Home" },
     { href: "/dashboard", label: "Dashboard" },
     { href: "/profile", label: "Profile" },
-    { href: "/pricing", label: "Pricing" },
+    { href: "/help", label: "Help" },
   ]
 
   return (
-    <header className="bg-white/95 dark:bg-black backdrop-blur-md border-b border-gray-200 dark:border-black sticky top-0 z-50 transition-all duration-300">
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent dark:via-black opacity-50"></div>
+    <header className="bg-white/95 dark:bg-card/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800/50 sticky top-0 z-50 transition-all duration-300">
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent dark:via-amber-500/5 opacity-50"></div>
       <div className="container mx-auto px-4 sm:px-6 relative">
         <div className="flex h-16 items-center justify-between">
           {/* Logo and Brand */}
@@ -58,10 +57,10 @@ export default function EnhancedCivitasHeader({ onUploadClick }: EnhancedCivitas
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-white hover:text-navy dark:hover:text-white transition-all duration-300 rounded-lg hover:bg-gray-100/50 dark:hover:bg-black group"
+                  className="relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-navy dark:hover:text-bronze transition-all duration-300 rounded-lg hover:bg-gray-100/50 dark:hover:bg-white/5 group"
                 >
                   {item.label}
-                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-navy to-bronze dark:from-black dark:to-black transition-all duration-300 group-hover:w-8 group-hover:left-1/2 group-hover:-translate-x-1/2 rounded-full"></span>
+                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-navy to-bronze dark:from-bronze dark:to-amber-500 transition-all duration-300 group-hover:w-8 group-hover:left-1/2 group-hover:-translate-x-1/2 rounded-full"></span>
                 </Link>
               ))}
             </nav>
@@ -73,7 +72,7 @@ export default function EnhancedCivitasHeader({ onUploadClick }: EnhancedCivitas
             <Button
               variant="ghost"
               size="icon"
-              className="hidden sm:flex h-9 w-9 rounded-full hover:bg-gray-100/50 dark:hover:bg-black transition-all duration-300 hover:scale-105"
+              className="hidden sm:flex h-9 w-9 rounded-full hover:bg-gray-100/50 dark:hover:bg-white/5 transition-all duration-300 hover:scale-105"
             >
               <Search className="h-4 w-4" />
             </Button>
@@ -81,7 +80,7 @@ export default function EnhancedCivitasHeader({ onUploadClick }: EnhancedCivitas
             {/* Upload Button */}
             <Button
               onClick={onUploadClick}
-              className="hidden sm:flex button-primary rounded-full px-6 py-2 h-9 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 dark:bg-black dark:text-white dark:hover:bg-gray-900"
+              className="hidden sm:flex button-primary rounded-full px-6 py-2 h-9 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               <Upload className="h-4 w-4 mr-2" />
               Upload
@@ -99,7 +98,7 @@ export default function EnhancedCivitasHeader({ onUploadClick }: EnhancedCivitas
             <Button
               variant="ghost"
               size="icon"
-              className="hidden sm:flex relative h-9 w-9 rounded-full hover:bg-gray-100/50 dark:hover:bg-black transition-all duration-300 hover:scale-105"
+              className="hidden sm:flex relative h-9 w-9 rounded-full hover:bg-gray-100/50 dark:hover:bg-white/5 transition-all duration-300 hover:scale-105"
             >
               <Bell className="h-4 w-4" />
               <span className="absolute -top-1 -right-1 h-3 w-3 bg-gradient-to-r from-red-500 to-red-600 rounded-full text-xs animate-pulse"></span>
@@ -121,7 +120,7 @@ export default function EnhancedCivitasHeader({ onUploadClick }: EnhancedCivitas
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent
-                className="w-64 glass-effect border-white/20 dark:border-black dark:bg-black dark:text-white"
+                className="w-64 glass-effect border-white/20 dark:border-white/10"
                 align="end"
                 forceMount
               >
@@ -131,31 +130,31 @@ export default function EnhancedCivitasHeader({ onUploadClick }: EnhancedCivitas
                     <p className="text-xs leading-none text-muted-foreground">{user?.email}</p>
                   </div>
                 </DropdownMenuLabel>
-                <DropdownMenuSeparator className="dark:border-black" />
+                <DropdownMenuSeparator className="dark:border-white/10" />
                 <DropdownMenuItem asChild>
                   <Link
                     href="/profile"
-                    className="flex items-center cursor-pointer p-3 hover:bg-gray-100/50 dark:hover:bg-black transition-colors"
+                    className="flex items-center cursor-pointer p-3 hover:bg-gray-100/50 dark:hover:bg-white/5 transition-colors"
                   >
                     <User className="mr-3 h-4 w-4" />
                     <span>Profile</span>
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer p-3 hover:bg-gray-100/50 dark:hover:bg-black transition-colors">
+                <DropdownMenuItem className="cursor-pointer p-3 hover:bg-gray-100/50 dark:hover:bg-white/5 transition-colors">
                   <Settings className="mr-3 h-4 w-4" />
                   <span>Settings</span>
                 </DropdownMenuItem>
-                <DropdownMenuSeparator className="dark:border-black" />
+                <DropdownMenuSeparator className="dark:border-white/10" />
                 <div className="md:hidden p-2">
                   <div className="flex items-center justify-between p-2">
                     <span className="text-sm font-medium">Language</span>
                     <LanguageSelector variant="compact" />
                   </div>
-                  <DropdownMenuSeparator className="dark:border-black my-2" />
+                  <DropdownMenuSeparator className="dark:border-white/10 my-2" />
                 </div>
                 <DropdownMenuItem
                   onClick={() => signOut()}
-                  className="text-red-600 dark:text-red-400 cursor-pointer p-3 hover:bg-red-50 dark:hover:bg-black transition-colors"
+                  className="text-red-600 dark:text-red-400 cursor-pointer p-3 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
                 >
                   <LogOut className="mr-3 h-4 w-4" />
                   <span>Log out</span>
@@ -169,14 +168,14 @@ export default function EnhancedCivitasHeader({ onUploadClick }: EnhancedCivitas
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="lg:hidden h-9 w-9 rounded-full hover:bg-gray-100/50 dark:hover:bg-black transition-all duration-300"
+                  className="lg:hidden h-9 w-9 rounded-full hover:bg-gray-100/50 dark:hover:bg-white/5 transition-all duration-300"
                 >
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-80 glass-effect dark:border-black p-0">
+              <SheetContent side="right" className="w-80 glass-effect dark:border-white/10 p-0">
                 <div className="flex flex-col h-full">
-                  <div className="p-6 border-b dark:border-black">
+                  <div className="p-6 border-b dark:border-white/10">
                     <div className="flex items-center space-x-3">
                       <div className="w-8 h-8 bg-gradient-to-br from-navy to-bronze dark:from-bronze dark:to-amber-500 rounded-lg flex items-center justify-center">
                         <FileText className="h-4 w-4 text-white" />
@@ -202,22 +201,22 @@ export default function EnhancedCivitasHeader({ onUploadClick }: EnhancedCivitas
                         <Link
                           key={item.href}
                           href={item.href}
-                          className="flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-white hover:bg-gray-100/50 dark:hover:bg-black rounded-xl transition-all duration-300"
+                          className="flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100/50 dark:hover:bg-white/5 rounded-xl transition-all duration-300"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {item.label}
                         </Link>
                       ))}
+                    </div>
 
-                      <div className="pt-4 border-t dark:border-black space-y-4">
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium">Language</span>
-                          <LanguageSelector variant="compact" />
-                        </div>
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium">Theme</span>
-                          <ThemeToggle variant="minimal" />
-                        </div>
+                    <div className="pt-4 border-t dark:border-white/10 space-y-4">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-medium">Language</span>
+                        <LanguageSelector variant="compact" />
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-medium">Theme</span>
+                        <ThemeToggle variant="minimal" />
                       </div>
                     </div>
                   </div>

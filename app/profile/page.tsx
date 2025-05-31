@@ -138,11 +138,9 @@ export default function ProfilePage() {
                     Free
                   </Badge>
                 </div>
-                <Button asChild className="w-full bg-navy hover:bg-navy/90">
-                  <a href="/pricing">
-                    <Zap className="h-4 w-4 mr-2" />
-                    Upgrade to Premium
-                  </a>
+                <Button className="w-full bg-navy hover:bg-navy/90">
+                  <Zap className="h-4 w-4 mr-2" />
+                  Upgrade to Premium
                 </Button>
               </CardContent>
             </Card>
@@ -248,18 +246,18 @@ export default function ProfilePage() {
                       </div>
                     </div>
                   ))}
-
-                  {documents.length === 0 && (
-                    <div className="text-center py-12">
-                      <FileText className="h-12 w-12 mx-auto text-gray-400 mb-4" />
-                      <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">No documents yet</h3>
-                      <p className="text-gray-500 dark:text-gray-400 mb-4">
-                        Upload your first legal document to get started with AI analysis.
-                      </p>
-                      <Button className="bg-navy hover:bg-navy/90">Upload Document</Button>
-                    </div>
-                  )}
                 </div>
+
+                {documents.length === 0 && (
+                  <div className="text-center py-12">
+                    <FileText className="h-12 w-12 mx-auto text-gray-400 mb-4" />
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">No documents yet</h3>
+                    <p className="text-gray-500 dark:text-gray-400 mb-4">
+                      Upload your first legal document to get started with AI analysis.
+                    </p>
+                    <Button className="bg-navy hover:bg-navy/90">Upload Document</Button>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </div>
